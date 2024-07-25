@@ -5,7 +5,7 @@ try:
     path = input("Enter the data file full path using (Ctrl+Shift+C) : ").strip()
     x_axis_name = input("Enter the name of x-axis:")
     y_axis_name = input("Enter the name of y-axis:")
-    Regression_data = pd.read_excel(rf"{path[1 : len(path)-1]}")
+    Regression_data = pd.read_excel(rf"{path[1 : len(path)-1]}", names= [x_axis_name, y_axis_name])
     data = pd.DataFrame(Regression_data)
     X, y = data.iloc[:, 0], data.iloc[:, 1] # iloc is needed
     X = np.array(X).reshape(X.size, 1)
